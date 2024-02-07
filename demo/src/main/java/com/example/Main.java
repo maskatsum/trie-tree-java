@@ -1,18 +1,17 @@
 package com.example;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
         String[] people = new String[]{"勝又 雅史", "勝俣 邦夫","勝間田 太郎", "勝又 二郎"};
     
         Trie root = new Trie(false);
+
         
         // トライ木の作成
         for (int i = 0; i < people.length; i++) {
+            
             // 例：性と名を分けて、性だけでグルーピングする
             String[] nameComponents = people[i].split(" ");
             String familyName = nameComponents[0];
@@ -30,7 +29,6 @@ public class Main {
         tamura.forEach(name -> {
             System.out.println(String.format("tamura -> %s", name));
         });
-        
     }
     static List<String> findPerson(Trie root, String name) {
         Trie parent = root;
